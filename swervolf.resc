@@ -1,0 +1,11 @@
+mach create
+using sysbus
+
+EnsureTypeIsLoaded "Antmicro.Renode.Peripherals.CPU.RiscV32"
+i $ORIGIN/SweRV_EH1.cs
+
+machine LoadPlatformDescription $ORIGIN/swervolf.repl
+
+sysbus LoadELF $ORIGIN/zephyr-hello_world.elf
+
+showAnalyzer uart
